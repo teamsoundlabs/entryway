@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin "daisyui" {
+	themes:
+		black --default,
+		black --prefersdark;
+}
+
+html,
+body {
+	@apply h-full;
+}
+
+* {
+	font-family: 'Inter', sans-serif;
+}
