@@ -1,0 +1,21 @@
+{% extends "bases/root.jinja" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div class="container mx-auto flex h-full items-center justify-center mt-16">
+    <div class="card card-dash bg-base-200 w-96">
+      <div class="card-body">
+        <h2 class="card-title">Oh no!</h2>
+        {% if message %}
+          <p>{{ message }}</p>
+        {% else %}
+          <p>
+            Something went wrong while handling your request, this has been
+            automatically reported.
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

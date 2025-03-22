@@ -1,0 +1,10 @@
+quart==0.20.0
+quart-schema==0.21.0
+redis==5.2.1
+logfire==3.6.4
+logfire[asgi]==3.6.4
+logfire[redis]==3.6.4
+logfire[httpx]==3.6.4
+python-dotenv==1.0.1
+cloudstile>=1.0.2
+beanie==1.29.0
