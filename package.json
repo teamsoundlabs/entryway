@@ -38,7 +38,12 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@sentry/sveltekit": "^9.8.0",
+		"@unkey/api": "^0.34.0",
 		"daisyui": "^5.0.9",
-		"src": "file:"
+		"ioredis": "^5.6.0",
+		"mongoose": "^8.12.2",
+		"src": "file:",
+		"uuid": "^11.1.0"
 	}
 }
