@@ -3,8 +3,8 @@
 @plugin '@tailwindcss/typography';
 @plugin "daisyui" {
 	themes:
-		dim --default,
-		dim --prefersdark;
+		white --default,
+		black --prefersdark;
 }
 
 html,

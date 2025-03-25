@@ -4,8 +4,14 @@
 	let { form, data } = $props();
 </script>
 
+<svelte:head>
+    <title>Entryway - Captcha</title> 
+	<meta name="description" content="Verify your humanity before proceeding." />
+	<meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 <div class="lg:min-h-screen">
-	<div class="card bg-base-300 w-96 rounded-md lg:mt-10">
+	<div class="card bg-base-200 w-96 rounded-md lg:mt-10">
 		<div class="card-body">
 			<h2 class="card-title">Are you human? 🤖</h2>
 			<p>
