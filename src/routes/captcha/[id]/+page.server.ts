@@ -11,19 +11,25 @@ import redis from '$db/redis';
 
 
 export const load: PageServerLoad = async (params) => {
-	const document = await RequestModel.findOne({ request_id: params.params.id }).lean();
+	const document = await RequestModel.findOne({ request_id: params.params.id });
 	if (!document) {
 		error(404, 'Verification request not found');
 	}
-
 	if (document.expires_at < new Date()) {
 		error(410, 'Verification request expired');
 	}
-
+	
 	return {
 		sitekey: CLOUDFLARE_TURNSTILE_SITE_KEY,
-		user: { ...document.user, _id: document.user._id.toString() },
-		server: { ...document.server, _id: document.server._id.toString() }
+		user: {
+			username: document.user.username,
+			display_name: document.user.display_name,
+			id: document.user.id
+		},
+		server: {
+			id: document.server.id,
+			name: document.server.name
+		}
 	};
 };
 
@@ -53,7 +59,6 @@ export const actions = {
 				error: 'Verification request not found',
 				hide: true
 			};
-
 		if (document.state === 'completed')
 			return {
 				error: 'Verification request already completed',
